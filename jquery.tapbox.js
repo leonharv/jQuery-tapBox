@@ -1,4 +1,12 @@
 jQuery.fn.tapBox = function(options){
+
+	settings = {
+		max: 100,
+		min: -100,
+		'steps': 1,
+	};
+	
+	$.extend(settings, options);
   
   // create the down-button
   var downButton = $('<div/>', {'class': 'tapDown', 'style': 'cursor:pointer;'}).text('-');
@@ -14,12 +22,16 @@ jQuery.fn.tapBox = function(options){
     
     // set event for downButton
     $('.tapDown').live('click', function(){
-    	$(this).next('.tapDisplay').val( parseInt( $(this).next('.tapDisplay').val() ) - 1 );
+    	var number = parseFloat( $(this).next('.tapDisplay').val() ) - settings.steps;
+    	if(number >= settings.min)
+    		$(this).next('.tapDisplay').val( number );
     });
     
     // set event for upButton
     $('.tapUp').live('click', function(){
-    	$(this).prev('.tapDisplay').val( parseInt( $(this).prev('.tapDisplay').val() ) + 1 );
+    	var number = parseFloat( $(this).prev('.tapDisplay').val() ) + settings.steps;
+    	if(number <= settings.max)
+    		$(this).prev('.tapDisplay').val( number );
     });
   });
 }
