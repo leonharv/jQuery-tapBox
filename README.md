@@ -8,10 +8,10 @@ Installation
 
 Simply include the 'jquery.tapbox.js' file in the head of your website. You also need jQuery and make shure, that jQuery is included bevore the plugin.
 
-<head>
- <script src="jquery-1.6.2.min.js"></script>
- <script src="jquery.tapbox.js"></script>
-</head>
+	<head>
+	 <script src="jquery-1.6.2.min.js"></script>
+	 <script src="jquery.tapbox.js"></script>
+	</head>
 
 Usage
 -----
