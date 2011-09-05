@@ -1,9 +1,26 @@
+/*
+ * tapBox 1.0 - jQuery spinbox plugin
+ *
+ * Copyright (c) 2011 Viktor Leonhardt (leonharv@unix-ag.uni-kl.de)
+ * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *
+ * Usage:
+ *
+ * $('.foo').tapBox({
+ * max: 100,
+ * min: 0,
+ * steps: 1
+ * });
+ *
+ */
+
 jQuery.fn.tapBox = function(options){
 
 	settings = {
 		max: 100,
 		min: -100,
-		'steps': 1,
+		'steps': 1
 	};
 	
 	$.extend(settings, options);
