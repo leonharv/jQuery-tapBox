@@ -40,8 +40,8 @@ jQuery.fn.tapBox = function(options){
   			// insert the selected text in the display
   			display.text($(this).find('option:selected').text());
   			// copy the templateButtons
-  			var selDownButton = downButton;
-				var selUpButton = upButton;
+  			var selDownButton = downButton.clone();
+				var selUpButton = upButton.clone();
   			// insert display and both buttons in the DOM
   			$(this).after(selDownButton, display, selUpButton);
   			
