@@ -27,7 +27,7 @@ or
     
 You can set this input as a spinbox simply like this:
 
-	$('#spinbox').tapbox();
+	$('#spinbox').tapBox();
 	
 or
 
@@ -41,7 +41,7 @@ Additional you can define some options:
 		steps: 1
 	};
 	
-	$('#spinbox').tapbox(options);
+	$('#spinbox').tapBox(options);
 	
 ## Options
 ### General:
