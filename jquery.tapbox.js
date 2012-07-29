@@ -54,6 +54,8 @@ jQuery.fn.tapBox = function(options){
 						$(Element).find('option').removeAttr('selected');
 						// select the previous
 						$(current).prev().attr('selected', true);
+						// set a trigger
+						$(Element).change();
 						// update the display
 						$(this).next('.tapDisplay').text($(current).prev().text());
 					} else {
@@ -62,6 +64,8 @@ jQuery.fn.tapBox = function(options){
 							$(Element).find('option').removeAttr('selected');
 							// select the first entry
 							$(Element).find('option:last').attr('selected', true);
+							// set a trigger
+							$(Element).change();
 							// update the display
 							$(this).next('.tapDisplay').text($(Element).find('option:last').text());
 						}
@@ -77,6 +81,8 @@ jQuery.fn.tapBox = function(options){
 						$(Element).find('option').removeAttr('selected');
 						// select the next
 						$(current).next().attr('selected', true);
+						// set a trigger
+						$(Element).change();
 						// update the display
 						$(this).prev('.tapDisplay').text($(current).next().text());
 					} else {
@@ -85,6 +91,8 @@ jQuery.fn.tapBox = function(options){
 							$(Element).find('option').removeAttr('selected');
 							// select the last entry
 							$(Element).find('option:first').attr('selected', true);
+							// set a trigger
+							$(Element).change();
 							// update the display
 							$(this).prev('.tapDisplay').text($(Element).find('option:first').text());
 						}
@@ -105,6 +113,8 @@ jQuery.fn.tapBox = function(options){
 					var number = parseFloat( $(this).next('.' + settings.customClass + 'Display').val() ) - settings.steps;
 					if(number >= settings.min)
 						$(this).next('.' + settings.customClass + 'Display').val( number );
+						// set a trigger
+						$(this).next('.' + settings.customClass + 'Display').change();
 				});
 				
 				// set event for upButton
@@ -112,6 +122,8 @@ jQuery.fn.tapBox = function(options){
 					var number = parseFloat( $(this).prev('.' + settings.customClass + 'Display').val() ) + settings.steps;
 					if(number <= settings.max)
 						$(this).prev('.' + settings.customClass + 'Display').val( number );
+						// set a trigger
+						$(this).prev('.' + settings.customClass + 'Display').change();
 				});
 				break;
 			default:
